@@ -70,4 +70,15 @@ FIGURE 5 - PAGE WEB AVEC CONNEXION À LA BD
 FIGURE 6 - JOURNAUX DU SERVEUR WEB
 <img width="903" height="641" alt="image" src="https://github.com/user-attachments/assets/e22cdec8-d546-4750-9150-56d040e1234e" />
 
+## Références
+Quelques PowerPoint du cours d'installation des serveurs et des services au cégep de Sainte-Foy 
+donné par Claude Roy 
+Ainsi que quelques exercices / TP
+- Exercice 16
+- TP4
+https://github.com/claude-roy/420-W45-SF_4372_E2025/tree/main/Exercices
+https://docs.ansible.com/ansible/latest/collections/ansible/builtin/copy_module.html
+https://docs.ansible.com/ansible/latest/playbook_guide/playbooks_intro.html#playbook-syntax
+https://docs.docker.com/
+https://stackoverflow.com/questions/62452039/how-to-run-docker-compose-commands-with-ansible#62452959
 
