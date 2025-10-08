@@ -54,15 +54,6 @@
         mode: '0755'
       tags: directories
 
-    - name: Créer repertoire 'group_vars'
-      ansible.builtin.file:
-        path: "{{ app_directory }}/group_vars"
-        state: directory
-        owner: "{{ ansible_user }}"
-        group: docker
-        mode: '0755'
-      tags: directories
-
     - name: Créer repertoire 'vars'
       ansible.builtin.file:
         path: "{{ app_directory }}/vars"
@@ -138,21 +129,6 @@
         mode: '0644'
       notify: restart compose
       tags: copy
-
-  post_tasks:
-    - name: AFFICHER ETAT DES CONTENEURS
-      ansible.builtin.command: docker compose ps
-      args:
-        chdir: "{{ app_directory }}"
-      tags: deploy, status
-
-    - name: afficher journaux nginx
-      ansible.builtin.command: docker compose logs nginx
-      args:
-        chdir: "{{ app_directory }}"
-      register: nginx_logs
-      changed_when: false
-      tags: status
 
   handlers:
     - name: restart compose
