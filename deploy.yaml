@@ -78,7 +78,7 @@
         state: directory
         owner: "{{ ansible_user }}"
         group: docker
-        mode: '0755'
+        mode: '0775'
       tags: directories
 
     - name: Créer repertoire 'php'
@@ -87,7 +87,7 @@
         state: directory
         owner: "{{ ansible_user }}"
         group: docker
-        mode: '0755'
+        mode: '0775'
       tags: directories
 
     - name: Copier compose.yaml
@@ -133,7 +133,7 @@
     - name: copier secret-variables
       ansible.builtin.copy:
         src: vars/secret-variables.yaml
-        dest: "{{ app_directory }}/vars/secret-varaibles.yaml"
+        dest: "{{ app_directory }}/vars/secret-variables.yaml"
         owner: "{{ ansible_user }}"
         group: docker
         mode: '0644'

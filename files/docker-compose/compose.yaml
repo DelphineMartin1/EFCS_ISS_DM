@@ -9,7 +9,7 @@ services:
       - DB_USER=root
       - DB_PASSWD=rootpassword
     volumes:
-      - {{ app_directory }}/html:/var/www/html
+      - /home/efcs/html:/var/www/html
   nginx:
     image: nginx:alpine
     depends_on:
@@ -20,8 +20,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - {{ app_directory }}/html:/var/www/html:ro
-      - {{ app_directory }}/conf:/etc/nginx/conf.d
+      - /home/efcs/html:/var/www/html:ro
+      - /home/efcs/conf:/etc/nginx/conf.d
   mysql:
     image: mysql:8.0
     restart: always
