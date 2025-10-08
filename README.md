@@ -1,4 +1,6 @@
---DELPHINE MARTIN
+## DELPHINE MARTIN
+J'ai remis le TP en retard, car je n'arrivais pas à me rendre au screen, mais j'ai corrigé mes erreurs aujourd'hui 08/10/2025 et remis cette date aussi, j'assumes les points de retard!
+Désormais tout est sensé fonctionner :)
 
 FIGURE 1 - PING / CONNEXION SSH
 <img width="868" height="255" alt="image" src="https://github.com/user-attachments/assets/48011721-9faf-409a-be25-08e3787b8d5f" />
