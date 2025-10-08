@@ -130,6 +130,16 @@
       notify: restart compose
       tags: copy
 
+    - name: copier secret-variables
+      ansible.builtin.copy:
+        src: vars/secret-varaibles.yaml
+        dest: "{{ app_directory }}/vars/secret-varaibles.yaml"
+        owner: "{{ ansible_user }}"
+        group: docker
+        mode: '0644'
+      notify: restart compose
+      tags: copy
+
   handlers:
     - name: restart compose
       ansible.builtin.command: docker compose up -d --build --force-recreate
