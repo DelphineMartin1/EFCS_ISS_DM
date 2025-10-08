@@ -1,0 +1,40 @@
+# compose.yaml
+---
+services:
+  php-fpm:
+    build: './php/'
+    networks:
+      - backend
+    environment:
+      - DB_USER=root
+      - DB_PASSWD=rootpassword
+    volumes:
+      - ./html:/var/www/html
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - php-fpm
+      - mysql
+    networks:
+      - frontend
+      - backend
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/var/www/html:ro
+      - ./conf:/etc/nginx/conf.d
+  mysql:
+    image: mysql:8.0
+    restart: always
+    networks:
+      - backend
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    volumes:
+      - dbdata:/var/lib/mysql
+
+networks:
+  frontend:
+  backend:
+volumes:
+  dbdata:
