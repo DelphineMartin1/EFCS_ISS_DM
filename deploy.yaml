@@ -1,6 +1,6 @@
 # deploy.yaml
 ---
-- name: "Apache installation avec Docker"
+- name: "Installation site Web complet avec docker compose"
   hosts: web
   become: true
   vars_files:

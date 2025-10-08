@@ -4,7 +4,7 @@ services:
   php-fpm:
     build: './php/'
     networks:
-      - backend
+      - efcs_network
     environment:
       - DB_USER=root
       - DB_PASSWD=rootpassword
@@ -16,8 +16,7 @@ services:
       - php-fpm
       - mysql
     networks:
-      - frontend
-      - backend
+      - efcs_network
     ports:
       - "80:80"
     volumes:
@@ -27,14 +26,13 @@ services:
     image: mysql:8.0
     restart: always
     networks:
-      - backend
+      - efcs_network
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
     volumes:
       - dbdata:/var/lib/mysql
 
 networks:
-  frontend:
-  backend:
+  efcs_network:
 volumes:
   dbdata:
