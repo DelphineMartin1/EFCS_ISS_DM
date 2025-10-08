@@ -4,9 +4,9 @@
   hosts: web
   become: true
   vars:
-    app_directory: /opt/efcs_app
+    app_directory: /home/efcs
   vars_files:
-    - ./vars/secret-varaibles.yaml
+    - ./vars/secret-variables.yaml
   pre_tasks:
     - name: INSTALL DEPENDANCES DOCKER
       apt:
@@ -132,7 +132,7 @@
 
     - name: copier secret-variables
       ansible.builtin.copy:
-        src: vars/secret-varaibles.yaml
+        src: vars/secret-variables.yaml
         dest: "{{ app_directory }}/vars/secret-varaibles.yaml"
         owner: "{{ ansible_user }}"
         group: docker
