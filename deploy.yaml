@@ -140,6 +140,14 @@
       notify: restart compose
       tags: copy
 
+    - name: Stopper les conteneurs Docker
+      ansible.builtin.command: docker compose down
+      args:
+        chdir: "{{ app_directory }}"
+      become: true
+      tags:
+        - stop
+
   handlers:
     - name: restart compose
       ansible.builtin.command: docker compose up -d --build --force-recreate
