@@ -18,12 +18,19 @@ Le playbook Ansible crée automatiquement les dossiers nécessaires, copie les f
 ## Structure du projet sur la VM
 
 /home/efcs
+
 ├─ conf/ # Configuration Nginx (default.conf)
+
 ├─ html/ # Fichiers PHP (index.php)
+
 ├─ php/ # Dockerfile PHP-FPM (Dockerfile)
+
 ├─ vars/ # Variables chiffrées avec ansible vault (secret-variables.yaml)
+
 ├─ compose.yaml # Fichier Docker Compose
+
 ├─ deploy.yaml # Playbook Ansible
+
 └─ README.md # Ce fichier
 
 ## Commandes importantes 
