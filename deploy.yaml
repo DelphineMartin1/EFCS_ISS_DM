@@ -54,15 +54,6 @@
         mode: '0755'
       tags: directories
 
-    - name: Créer repertoire 'tp_efcs'
-      ansible.builtin.file:
-        path: "{{ app_directory }}/tp_efcs"
-        state: directory
-        owner: "{{ ansible_user }}"
-        group: docker
-        mode: '0755'
-      tags: directories copy status
-
     - name: Créer repertoire 'group_vars'
       ansible.builtin.file:
         path: "{{ app_directory }}/group_vars"
@@ -70,7 +61,7 @@
         owner: "{{ ansible_user }}"
         group: docker
         mode: '0755'
-      tags: directories copy status
+      tags: directories
 
     - name: Créer repertoire 'vars'
       ansible.builtin.file:
@@ -79,7 +70,7 @@
         owner: "{{ ansible_user }}"
         group: docker
         mode: '0755'
-      tags: directories copy status
+      tags: directories
 
     - name: Créer repertoire 'conf'
       ansible.builtin.file:
@@ -116,7 +107,7 @@
         group: docker
         mode: '0644'
       notify: restart compose
-      tags: copy, deploy
+      tags: copy
 
     - name: copier default.conf
       ansible.builtin.copy:
@@ -126,7 +117,7 @@
         group: docker
         mode: '0644'
       notify: restart compose
-      tags: copy, files
+      tags: copy
 
     - name: copier index.php
       ansible.builtin.copy:
@@ -136,7 +127,7 @@
         group: docker
         mode: '0644'
       notify: restart compose
-      tags: copy, files
+      tags: copy
 
     - name: copier dockerfile
       ansible.builtin.copy:
@@ -146,7 +137,7 @@
         group: docker
         mode: '0644'
       notify: restart compose
-      tags: copy, files
+      tags: copy
 
   post_tasks:
     - name: AFFICHER ETAT DES CONTENEURS
