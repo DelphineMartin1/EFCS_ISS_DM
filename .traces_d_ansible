@@ -1,0 +1,359 @@
+2025-10-06 10:04:13,880 p=5465 u=deploy n=ansible INFO| srv-apache-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-10-07 17:50:50,920 p=10527 u=deploy n=ansible WARNING| [WARNING]: Unable to parse /home/deploy/tp-efcs/inventaire as an inventory
+source
+
+2025-10-07 17:50:50,920 p=10527 u=deploy n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-07 17:50:50,924 p=10527 u=deploy n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2025-10-07 17:50:50,925 p=10527 u=deploy n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: webservers
+
+2025-10-07 17:52:10,219 p=10540 u=deploy n=ansible WARNING| [WARNING]: Unable to parse /home/deploy/tp-efcs/inventaire as an inventory
+source
+
+2025-10-07 17:52:10,220 p=10540 u=deploy n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-07 17:52:10,224 p=10540 u=deploy n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2025-10-07 17:52:10,224 p=10540 u=deploy n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2025-10-07 17:54:35,814 p=10568 u=deploy n=ansible INFO| localhost | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 22: Connection refused",
+    "unreachable": true
+}
+2025-10-07 17:54:36,985 p=10568 u=deploy n=ansible INFO| srv-apache-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-10-07 17:55:45,146 p=10597 u=deploy n=ansible INFO| localhost | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 22: Connection refused",
+    "unreachable": true
+}
+2025-10-07 17:55:46,112 p=10597 u=deploy n=ansible INFO| srv-apache-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-10-07 17:57:47,029 p=10642 u=deploy n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: prod
+
+2025-10-07 17:57:47,031 p=10642 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 17:57:47,031 p=10642 u=deploy n=ansible INFO| skipping: no hosts matched
+2025-10-07 17:57:47,031 p=10642 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 17:58:13,259 p=10651 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 17:58:13,270 p=10651 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 17:58:14,413 p=10651 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 17:58:14,415 p=10651 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 17:58:14,415 p=10651 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 17:58:47,913 p=10674 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 17:58:47,924 p=10674 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 17:58:57,215 p=10674 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '10.100.2.27' (ED25519) to the list of known hosts.\r\ndeploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 17:58:57,217 p=10674 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 17:58:57,218 p=10674 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 17:59:49,384 p=10697 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 17:59:49,394 p=10697 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 17:59:49,676 p=10697 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 17:59:49,679 p=10697 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 17:59:49,680 p=10697 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:00:32,344 p=10785 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:00:32,354 p=10785 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:00:32,632 p=10785 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:00:32,634 p=10785 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:00:32,635 p=10785 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:02:48,513 p=10804 u=deploy n=ansible INFO| srv-apache-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-10-07 18:06:17,382 p=10924 u=root n=ansible WARNING| [WARNING]: Unable to parse /home/deploy/tp-efcs/hosts as an inventory source
+
+2025-10-07 18:06:17,383 p=10924 u=root n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-07 18:06:17,387 p=10924 u=root n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2025-10-07 18:06:17,595 p=10924 u=root n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2025-10-07 18:06:17,597 p=10924 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:06:17,597 p=10924 u=root n=ansible INFO| skipping: no hosts matched
+2025-10-07 18:06:17,597 p=10924 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:06:24,338 p=10932 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:06:24,348 p=10932 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:06:24,631 p=10932 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:06:24,633 p=10932 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:06:24,633 p=10932 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:08:02,370 p=10951 u=deploy n=ansible INFO| srv-apache-1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3.10"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+2025-10-07 18:08:10,474 p=10970 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:08:10,485 p=10970 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:08:10,763 p=10970 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:08:10,765 p=10970 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:08:10,766 p=10970 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:12:43,069 p=11012 u=deploy n=ansible WARNING| [WARNING]: Unable to parse /home/deploy/tp-efcs/hosts as an inventory source
+
+2025-10-07 18:12:43,069 p=11012 u=deploy n=ansible WARNING| [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2025-10-07 18:12:43,074 p=11012 u=deploy n=ansible WARNING| [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2025-10-07 18:12:43,282 p=11012 u=deploy n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: web
+
+2025-10-07 18:12:43,283 p=11012 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:12:43,283 p=11012 u=deploy n=ansible INFO| skipping: no hosts matched
+2025-10-07 18:12:43,284 p=11012 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:13:05,781 p=11018 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:13:05,791 p=11018 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:13:07,006 p=11018 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:13:07,009 p=11018 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:13:07,010 p=11018 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:13:15,596 p=11039 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:13:15,608 p=11039 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:13:15,881 p=11039 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:13:15,883 p=11039 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:13:15,883 p=11039 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:28:55,914 p=11399 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:28:55,924 p=11399 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:29:02,052 p=11399 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:29:02,053 p=11399 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:29:02,053 p=11399 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:29:22,702 p=11429 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:29:22,712 p=11429 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:29:22,991 p=11429 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:29:22,993 p=11429 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:29:22,993 p=11429 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:30:52,943 p=11467 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:30:52,953 p=11467 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:30:53,232 p=11467 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:30:53,235 p=11467 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:30:53,235 p=11467 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:31:10,620 p=11479 u=root n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:31:10,630 p=11479 u=root n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:31:10,902 p=11479 u=root n=ansible INFO| fatal: [srv-apache-1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: deploy@10.100.2.27: Permission denied (publickey,password).", "unreachable": true}
+2025-10-07 18:31:10,904 p=11479 u=root n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:31:10,904 p=11479 u=root n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:32:32,745 p=11493 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:32:32,755 p=11493 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:32:33,898 p=11493 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:32:33,899 p=11493 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:32:33,899 p=11493 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:34:36,147 p=11519 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:34:36,157 p=11519 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:34:37,292 p=11519 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:34:37,294 p=11519 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:34:37,294 p=11519 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:34:46,872 p=11536 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:34:46,882 p=11536 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:34:47,510 p=11536 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:34:47,514 p=11536 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:34:47,514 p=11536 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:35:03,395 p=11552 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:35:03,405 p=11552 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:35:04,012 p=11552 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:35:04,017 p=11552 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:35:04,017 p=11552 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:35:30,218 p=11573 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:35:30,228 p=11573 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:35:30,848 p=11573 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:35:30,849 p=11573 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:35:30,849 p=11573 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:36:34,412 p=11590 u=deploy n=ansible ERROR| ERROR! vars/secret-varaibles.yaml exists, please use 'edit' instead
+2025-10-07 18:38:07,763 p=11610 u=deploy n=ansible INFO| Rekey successful
+2025-10-07 18:39:35,599 p=11643 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:39:35,609 p=11643 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:39:36,751 p=11643 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:39:36,753 p=11643 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:39:36,753 p=11643 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:50:58,780 p=11793 u=deploy n=ansible ERROR| ERROR! Unable to read source file (/secret-varaibles.yaml): [Errno 2] Aucun fichier ou dossier de ce nom: '/secret-varaibles.yaml'
+2025-10-07 18:52:02,324 p=11805 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:52:02,335 p=11805 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:52:03,429 p=11805 u=deploy n=ansible INFO| fatal: [srv-apache-1]: FAILED! => {"msg": "Missing sudo password"}
+2025-10-07 18:52:03,431 p=11805 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:52:03,432 p=11805 u=deploy n=ansible INFO| srv-apache-1               : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-10-07 18:54:10,619 p=11844 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 18:54:10,629 p=11844 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 18:54:12,893 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:12,908 p=11844 u=deploy n=ansible INFO| TASK [INSTALL DEPENDANCES DOCKER] **********************************************
+2025-10-07 18:54:22,276 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:22,286 p=11844 u=deploy n=ansible INFO| TASK [AJOUT CLE GPG DE DOCKER] *************************************************
+2025-10-07 18:54:23,394 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:23,405 p=11844 u=deploy n=ansible INFO| TASK [AJOUT DEPOT APT DE DOCKER] ***********************************************
+2025-10-07 18:54:24,236 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:24,248 p=11844 u=deploy n=ansible INFO| TASK [INSTALL DOCKER] **********************************************************
+2025-10-07 18:54:27,011 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:27,022 p=11844 u=deploy n=ansible INFO| TASK [DEMARRE DOCKER] **********************************************************
+2025-10-07 18:54:28,002 p=11844 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 18:54:28,007 p=11844 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 18:54:28,007 p=11844 u=deploy n=ansible INFO| srv-apache-1               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 19:18:14,765 p=12305 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 19:18:14,775 p=12305 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 19:18:17,073 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:17,081 p=12305 u=deploy n=ansible INFO| TASK [INSTALL DEPENDANCES DOCKER] **********************************************
+2025-10-07 19:18:20,180 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:20,192 p=12305 u=deploy n=ansible INFO| TASK [AJOUT CLE GPG DE DOCKER] *************************************************
+2025-10-07 19:18:21,282 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:21,292 p=12305 u=deploy n=ansible INFO| TASK [AJOUT DEPOT APT DE DOCKER] ***********************************************
+2025-10-07 19:18:22,127 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:22,138 p=12305 u=deploy n=ansible INFO| TASK [INSTALL DOCKER] **********************************************************
+2025-10-07 19:18:24,991 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:25,002 p=12305 u=deploy n=ansible INFO| TASK [DEMARRE DOCKER] **********************************************************
+2025-10-07 19:18:26,008 p=12305 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 19:18:26,012 p=12305 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 19:18:26,012 p=12305 u=deploy n=ansible INFO| srv-apache-1               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 21:41:26,728 p=3772 u=deploy n=ansible INFO| PLAY [Apache installation avec Docker] *****************************************
+2025-10-07 21:41:26,749 p=3772 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 21:41:34,161 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:34,170 p=3772 u=deploy n=ansible INFO| TASK [INSTALL DEPENDANCES DOCKER] **********************************************
+2025-10-07 21:41:40,199 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:40,208 p=3772 u=deploy n=ansible INFO| TASK [AJOUT CLE GPG DE DOCKER] *************************************************
+2025-10-07 21:41:41,283 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:41,295 p=3772 u=deploy n=ansible INFO| TASK [AJOUT DEPOT APT DE DOCKER] ***********************************************
+2025-10-07 21:41:42,150 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:42,161 p=3772 u=deploy n=ansible INFO| TASK [INSTALL DOCKER] **********************************************************
+2025-10-07 21:41:44,911 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:44,921 p=3772 u=deploy n=ansible INFO| TASK [DEMARRE DOCKER] **********************************************************
+2025-10-07 21:41:45,895 p=3772 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:41:45,898 p=3772 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 21:41:45,899 p=3772 u=deploy n=ansible INFO| srv-apache-1               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 21:42:36,732 p=3874 u=deploy n=ansible INFO| PLAY [Installation site Web complet avec docker compose] ***********************
+2025-10-07 21:42:36,742 p=3874 u=deploy n=ansible INFO| TASK [Gathering Facts] *********************************************************
+2025-10-07 21:42:38,584 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:38,594 p=3874 u=deploy n=ansible INFO| TASK [INSTALL DEPENDANCES DOCKER] **********************************************
+2025-10-07 21:42:41,647 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:41,658 p=3874 u=deploy n=ansible INFO| TASK [AJOUT CLE GPG DE DOCKER] *************************************************
+2025-10-07 21:42:42,763 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:42,771 p=3874 u=deploy n=ansible INFO| TASK [AJOUT DEPOT APT DE DOCKER] ***********************************************
+2025-10-07 21:42:43,634 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:43,645 p=3874 u=deploy n=ansible INFO| TASK [INSTALL DOCKER] **********************************************************
+2025-10-07 21:42:46,527 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:46,536 p=3874 u=deploy n=ansible INFO| TASK [DEMARRE DOCKER] **********************************************************
+2025-10-07 21:42:47,519 p=3874 u=deploy n=ansible INFO| ok: [srv-apache-1]
+2025-10-07 21:42:47,524 p=3874 u=deploy n=ansible INFO| PLAY RECAP *********************************************************************
+2025-10-07 21:42:47,525 p=3874 u=deploy n=ansible INFO| srv-apache-1               : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-10-07 22:24:33,085 p=3884 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 121, column 7
+did not find expected key
+  in "<unicode string>", line 131, column 7
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 131, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+      - name: copier default.conf
+      ^ here
+
+2025-10-07 22:27:37,855 p=3939 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 131, column 7
+did not find expected key
+  in "<unicode string>", line 141, column 7
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 141, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+      - name: copier index.php
+      ^ here
+
+2025-10-07 22:28:23,315 p=3945 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator. while parsing a block collection
+  in "<unicode string>", line 49, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 161, column 5
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 161, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    post_tasks:
+    ^ here
+
+2025-10-07 22:29:30,043 p=3951 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 3, column 3
+did not find expected key
+  in "<unicode string>", line 161, column 4
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 161, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+   post_tasks:
+   ^ here
+
+2025-10-07 22:31:41,073 p=3969 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator. while parsing a block collection
+  in "<unicode string>", line 161, column 5
+did not find expected '-' indicator
+  in "<unicode string>", line 162, column 5
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 162, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - name: AFFICHER ETAT DES CONTENEURS
+    ansible.builtin.command: docker compose ps
+    ^ here
+
+2025-10-07 22:32:04,630 p=3976 u=root n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context. mapping values are not allowed in this context
+  in "<unicode string>", line 163, column 12
+
+The error appears to be in '/home/deploy/tp-efcs/deploy.yaml': line 163, column 12, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      ansible.builtin.command: docker compose ps
+       args:
+           ^ here
+
+2025-10-07 22:34:13,591 p=3982 u=root n=ansible ERROR| ERROR! Attempting to decrypt but no vault secrets found

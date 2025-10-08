@@ -44,8 +44,7 @@
         state: started
         name: docker
       tags: docker
-      
-  tasks:
+
     - name: Créer repertoire 'tp_efcs'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs"
@@ -54,7 +53,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'group_vars'
       ansible.builtin.file:
         path: "{{ app_directory }}/group_vars"
@@ -63,7 +62,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'vars'
       ansible.builtin.file:
         path: "{{ app_directory }}/vars"
@@ -72,7 +71,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'tp_efcs/files'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs/files"
@@ -81,7 +80,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'tp_efcs/files/docker-compose'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs/files/docker-compose"
@@ -90,7 +89,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'tp_efcs/files/docker-compose/conf'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs/files/docker-compose/conf"
@@ -99,7 +98,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'tp_efcs/files/docker-compose/html'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs/files/docker-compose/html"
@@ -108,7 +107,7 @@
         group: docker
         mode: '0755'
       tags: directories
-    
+
     - name: Créer repertoire 'tp_efcs/files/docker-compose/php'
       ansible.builtin.file:
         path: "{{ app_directory }}/tp_efcs/files/docker-compose/php"
@@ -128,48 +127,47 @@
         notify: restart compose
       tags: copy, deploy
 
-      - name: copier default.conf
-        ansible.builtin.copy:
-          src: files/docker-compose/conf/default.conf
-          dest: "{{ app_directory }}/conf/default.conf"
-          owner: "{{ ansible_user }}"
-          group: docker
-          mode: '0644'
-          notify: restart compose
-        tags: copy, files
+    - name: copier default.conf
+      ansible.builtin.copy:
+        src: files/docker-compose/conf/default.conf
+        dest: "{{ app_directory }}/conf/default.conf"
+        owner: "{{ ansible_user }}"
+        group: docker
+        mode: '0644'
+        notify: restart compose
+      tags: copy, files
 
-      - name: copier index.php
-        ansible.builtin.copy:
-          src: files/docker-compose/html/index.php
-          dest: "{{ app_directory }}/html/index.php"
-          owner: "{{ ansible_user }}"
-          group: docker
-          mode: '0644'
-          notify: restart compose
-        tags: copy, files
-      
-      - name: copier dockerfile
-        ansible.builtin.copy:
-          src: files/docker-compose/php/Dockerfile
-          dest: "{{ app_directory }}/php/Dockerfile"
-          owner: "{{ ansible_user }}"
-          group: docker
-          mode: '0644'
-          notify: restart compose
-        tags: copy, files
+    - name: copier index.php
+      ansible.builtin.copy:
+        src: files/docker-compose/html/index.php
+        dest: "{{ app_directory }}/html/index.php"
+        owner: "{{ ansible_user }}"
+        group: docker
+        mode: '0644'
+        notify: restart compose
+      tags: copy, files
 
-    post_tasks:
-      - name: AFFICHER ETAT DES CONTENEURS
+    - name: copier dockerfile
+      ansible.builtin.copy:
+        src: files/docker-compose/php/Dockerfile
+        dest: "{{ app_directory }}/php/Dockerfile"
+        owner: "{{ ansible_user }}"
+        group: docker
+        mode: '0644'
+        notify: restart compose
+      tags: copy, files
+
+  post_tasks:
+    - name: AFFICHER ETAT DES CONTENEURS
       ansible.builtin.command: docker compose ps
       args:
         chdir: "{{ app_directory }}"
-      
-      - name: afficher journaux nginx
+      tags: deploy, status
+
+    - name: afficher journaux nginx
       ansible.builtin.command: docker compose logs nginx
       args:
         chdir: "{{ app_directory }}"
       register: nginx_logs
       changed_when: false
       tags: status
-
-
